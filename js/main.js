@@ -84,5 +84,7 @@ document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.tar
 document.querySelectorAll("[data-phones]").forEach(a=>{a.textContent=K.phones.join(" / ")});
 document.querySelectorAll("[data-address]").forEach(a=>{a.textContent=K.address});
 paintImages();
+if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+ document.querySelectorAll("[data-reveal]").forEach(el=>{el.classList.add("rv");io.observe(el)})}
 const t=$("#testi");if(t)t.innerHTML=K.testimonials.length?K.testimonials.map(x=>`<blockquote><p>${x.text}</p><cite>${x.name}, ${x.place}</cite></blockquote>`).join(""):`<blockquote class="empty"><p>Travelled or shipped with KSZ? We would love to feature your feedback here.</p><cite><a href="${wa("Hello KSZ, I'd like to share feedback.")}" target="_blank" rel="noopener">Share your experience on WhatsApp</a></cite></blockquote>`;
 })();
