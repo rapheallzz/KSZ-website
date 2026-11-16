@@ -1,0 +1,4 @@
+# Clean URLs on Apache: /transport and /printing
+RewriteEngine On
+RewriteRule ^transport/?$ transport.html [L]
+RewriteRule ^printing/?$ printing.html [L]
