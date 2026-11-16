@@ -15,6 +15,8 @@ const ic={
  ig:S('<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/>'),
  x:S('<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>',1)
 };
+ic.send=S('<path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4 18-7Z"/>');
+ic.close=S('<path d="M6 6l12 12M18 6 6 18"/>');
 const nav=`<header class="nav"><div class="wrap nav-in">
 <a class="logo" href="index.html" aria-label="KSZ Ventures Limited home"><span class="logo-mark">KSZ</span><span class="logo-txt">VENTURES LIMITED</span></a>
 <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
@@ -64,14 +66,15 @@ document.body.insertAdjacentHTML("beforeend",`<div class="fab-dock">
 <a class="fab round call" href="tel:${K.phones[0]}" aria-label="Call us" title="Call us">${ic.phone}</a>
 <a class="fab round wa" href="${wa()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">${ic.wa}</a>
 <button class="fab chat-fab" aria-label="Open chat" aria-expanded="false" aria-controls="chat" data-chat>${ic.chat}<span>Chat with us</span></button></div>
-<section class="chat" id="chat" hidden aria-label="Customer support chat"><div class="chat-h"><span class="chat-t"><i>${ic.chat}</i>KSZ Support</span><button aria-label="Close chat" id="cx">&times;</button></div>
+<section class="chat" id="chat" hidden role="dialog" aria-label="Customer support chat"><div class="chat-h"><span class="chat-av" aria-hidden="true">KSZ<i></i></span><div class="chat-id"><b>KSZ Support</b><small>Here to help</small></div><button type="button" aria-label="Close chat" id="cx">${ic.close}</button></div>
 <div class="chat-b" id="cb" aria-live="polite"></div><div class="chat-q" id="cq"></div>
-<div class="chat-c"><a class="wa" target="_blank" rel="noopener" id="cwa">${ic.wa}WhatsApp</a><a id="ccall" href="tel:${K.phones[0]}">${ic.phone}Call</a><a class="em" id="cem">${ic.mail}Email</a></div>
-<form class="chat-f" id="cf"><input id="ci" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button>Send</button></form></section>`);
+<div class="chat-c"><p class="chat-or"><span>Or reach us directly</span></p><div class="chat-acts"><a class="wa" target="_blank" rel="noopener" id="cwa">${ic.wa}WhatsApp</a><a id="ccall" href="tel:${K.phones[0]}">${ic.phone}Call</a><a class="em" id="cem">${ic.mail}Email</a></div></div>
+<form class="chat-f" id="cf"><input id="ci" placeholder="Type your question" autocomplete="off" aria-label="Your question"><button aria-label="Send message">${ic.send}</button></form></section>`);
 const cb=$("#cb"),chat=$("#chat");
-const say=(t,me,u)=>{const d=document.createElement("div");d.className="m "+(me?"me":"bot");d.textContent=t;if(u){const a=document.createElement("a");a.href=u;a.textContent="Open section";d.append(" ",a)}cb.append(d);cb.scrollTop=cb.scrollHeight};
+const say=(t,me,u)=>{const d=document.createElement("div");d.className="m "+(me?"me":"bot");const p=document.createElement("span");p.textContent=t;d.append(p);if(u){const a=document.createElement("a");a.href=u;a.textContent="Open section";d.append(" ",a)}const tm=document.createElement("time");tm.textContent=new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});d.append(tm);cb.append(d);cb.scrollTop=cb.scrollHeight};
+const bot=(t,u)=>{const ty=document.createElement("div");ty.className="m bot typing";ty.setAttribute("aria-label","Typing");ty.innerHTML="<i></i><i></i><i></i>";cb.append(ty);cb.scrollTop=cb.scrollHeight;setTimeout(()=>{ty.remove();say(t,0,u)},650)};
 function reply(q){const s=q.toLowerCase(),hit=FAQ.find(f=>f.k.some(w=>s.includes(w)));
- say(hit?hit.a:"I can help with bus hire, logistics, printing, embroidery, large format, souvenirs and quotes. For anything else, tap WhatsApp or Email below.",0,hit&&hit.u);
+ bot(hit?hit.a:"I can help with bus hire, logistics, printing, embroidery, large format, souvenirs and quotes. For anything else, tap WhatsApp or Email below.",hit&&hit.u);
  $("#cwa").href=wa("Hello KSZ Ventures. "+q);$("#cem").href=`mailto:${K.email}?subject=${encodeURIComponent("Enquiry")}&body=${encodeURIComponent(q)}`}
 $("#cq").innerHTML=quick.map(q=>`<button type="button">${q}</button>`).join("");
 $("#cq").onclick=e=>{if(e.target.tagName==="BUTTON"){say(e.target.textContent,1);reply(e.target.textContent)}};
@@ -79,7 +82,8 @@ $("#cf").onsubmit=e=>{e.preventDefault();const v=$("#ci").value.trim();if(!v)ret
 $("#cwa").href=wa();$("#cem").href="mailto:"+K.email;
 say("Hello! Ask about bus hire, logistics, printing or quotes.");
 const open=o=>{chat.hidden=!o;$(".chat-fab").setAttribute("aria-expanded",o);if(o)$("#ci").focus()};
-document.addEventListener("click",e=>{if(e.target.closest("[data-chat]"))open(chat.hidden)});$("#cx").onclick=()=>open(false);
+document.addEventListener("click",e=>{if(e.target.closest("[data-chat]"))open(chat.hidden)});$("#cx").onclick=()=>{open(false);$(".chat-fab").focus()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!chat.hidden){open(false);$(".chat-fab").focus()}});
 document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
 document.querySelectorAll("[data-phones]").forEach(a=>{a.textContent=K.phones.join(" / ")});
 document.querySelectorAll("[data-address]").forEach(a=>{a.textContent=K.address});
