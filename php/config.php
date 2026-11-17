@@ -3,7 +3,7 @@
 return [
   'transport_to' => 'kszventures@gmail.com',   // where transport enquiries go
   'printing_to'  => 'kszventures@gmail.com',   // where print quotes go
-  'from_email'   => 'no-reply@yourdomain.com', // use an address on YOUR domain so mail is not rejected
+  'from_email'   => 'no-reply@ksznigeria.com', // use an address on YOUR domain so mail is not rejected
   'from_name'    => 'KSZ Ventures Website',
   // 'mail' = PHP mail(). 'smtp' = SMTP via PHPMailer (run: composer require phpmailer/phpmailer).
   'transport'    => 'mail',
