@@ -21,9 +21,10 @@ const nav=`<header class="nav"><div class="wrap nav-in">
 <a class="logo" href="index.html" aria-label="KSZ Ventures Limited home"><img class="logo-img" src="Media/logo.png" alt="KSZ Ventures Limited" width="493" height="228"></a>
 <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
 <nav class="links" id="links">
-<a href="transport.html" class="${page==="transport"?"on":""}">Home / Transport</a>
+<a href="index.html" class="${page==="home"?"on":""}">Home</a>
+<a href="transport.html" class="${page==="transport"?"on":""}">Transportation &amp; Logistics</a>
 <a href="printing.html" class="${page==="printing"?"on":""}">Printing &amp; Branding</a>
-<a href="index.html#about" class="${page==="home"?"on":""}">About Us</a>
+<a href="index.html#about">About Us</a>
 <a href="#contact">Contact Us</a>
 <a class="btn red" href="${page==="printing"?"printing.html#quote":"transport.html#book"}">${page==="printing"?"Get a Quote":"Book a Bus"}</a>
 </nav></div></header>`;
