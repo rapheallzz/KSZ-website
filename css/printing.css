@@ -47,7 +47,7 @@ body[data-page=printing] .nav{border-bottom:3px solid var(--teal)}
 .cat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.3rem;margin-top:clamp(2.2rem,5vw,3.4rem);align-items:start;text-align:left}
 .cc{position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:3/4;min-width:0;padding:1.4rem;border-radius:26px;overflow:hidden;isolation:isolate;color:#fff;text-decoration:none;background:linear-gradient(160deg,var(--teal),var(--blue));box-shadow:0 26px 44px -30px rgba(5,60,66,.85);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
 .cc-bg{position:absolute;inset:0;z-index:-2;background:transparent center/cover no-repeat;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.cc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,44,50,.95) 0%,rgba(4,44,50,.58) 42%,rgba(4,44,50,.06) 76%)}
+.cc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,44,50,.96) 0%,rgba(4,44,50,.78) 40%,rgba(4,44,50,.22) 72%,rgba(4,44,50,.1) 100%)}
 .cc:hover{transform:translateY(-8px);box-shadow:0 38px 56px -28px rgba(5,60,66,.95)}.cc:hover .cc-bg{transform:scale(1.1)}
 .cc-no{position:absolute;right:1.2rem;top:1rem;font:900 2.4rem/1 var(--pop);opacity:.3}
 .cc-ic{position:absolute;left:1.2rem;top:1.2rem;display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:#fff;color:var(--c,var(--teal));box-shadow:0 12px 24px -10px rgba(0,0,0,.6);transition:transform .35s,background .3s,color .3s}

@@ -139,4 +139,6 @@ body[data-page="home"] h3,body[data-page="transport"] h3,body[data-page="printin
 .links.open{display:flex}.links a{padding:.7rem 0}.links .btn{text-align:center}.form{grid-template-columns:1fr}.logo-txt{font-size:.68rem}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}.foot{padding-bottom:4.2rem}.btn{width:auto}.fab-dock{right:.75rem;bottom:.75rem}.chat{right:.5rem;left:.5rem;width:auto;bottom:4.7rem;max-height:calc(100dvh - 6.2rem)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-.pane{background:var(--teal) center/cover no-repeat}
+.pane{background:var(--teal) center/cover no-repeat}.pane.t{background-position:24% center}
+
+.logo img{display:block;height:50px;width:auto}.logo.light img{height:56px;background:#fff;padding:.4rem .9rem;border-radius:12px}@media(max-width:700px){.logo img{height:42px}}

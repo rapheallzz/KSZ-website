@@ -18,7 +18,7 @@ const ic={
 ic.send=S('<path d="M21 3 10 14"/><path d="m21 3-7 18-4-7-7-4 18-7Z"/>');
 ic.close=S('<path d="M6 6l12 12M18 6 6 18"/>');
 const nav=`<header class="nav"><div class="wrap nav-in">
-<a class="logo" href="index.html" aria-label="KSZ Ventures Limited home"><span class="logo-mark">KSZ</span><span class="logo-txt">VENTURES LIMITED</span></a>
+<a class="logo" href="index.html" aria-label="KSZ Ventures Limited home"><img src="assets/img/logo.png" alt="KSZ Ventures Limited" width="80" height="50"></a>
 <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
 <nav class="links" id="links">
 <a href="transport.html" class="${page==="transport"?"on":""}">Home / Transport</a>
@@ -29,7 +29,7 @@ const nav=`<header class="nav"><div class="wrap nav-in">
 </nav></div></header>`;
 const li=(h,t)=>`<li><a href="${h}">${t}</a></li>`;
 const foot=`<footer class="foot" id="contact"><div class="wrap"><div class="foot-grid">
-<div class="foot-brand"><a class="logo light" href="index.html"><span class="logo-mark">KSZ</span><span class="logo-txt">VENTURES LIMITED</span></a>
+<div class="foot-brand"><a class="logo light" href="index.html"><img src="assets/img/logo.png" alt="KSZ Ventures Limited" width="80" height="50"></a>
 <p class="foot-about">Printing, branding and corporate visibility solutions, plus safe and reliable transport and logistics, from Abuja, Nigeria.</p><span class="rc">${K.rc}</span>
 <div class="soc"><a href="${K.facebook}" aria-label="Facebook">${ic.fb}</a><a href="${K.instagram}" aria-label="Instagram">${ic.ig}</a><a href="${K.x}" aria-label="X">${ic.x}</a></div></div>
 <nav class="foot-col" aria-label="Quick links"><h4>Quick links</h4><ul>${li("index.html","Home")}${li("transport.html","Transport")}${li("printing.html","Printing &amp; Branding")}${li("index.html#about","About Us")}</ul></nav>

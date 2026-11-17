@@ -6,28 +6,39 @@ window.KSZ = {
   email: "kszventures@gmail.com",
   address: "Suite C10, Rajab Plaza, Area 3, Garki, Abuja, FCT",
   facebook: "#", instagram: "#", x: "#", // social placeholders
-  // Replace any URL below with your own photo (e.g. "assets/images/bus.jpg").
+  // Optimised copies of the photos in /Media live in assets/img. Swap any path below to change a photo.
   // If an image fails to load, a branded fallback block is shown instead.
   IMAGES: {
-    heroBus:   "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=70",
-    coaster:   "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1000&q=70",
-    passengers:"https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&w=1000&q=70",
-    corporate: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=70",
-    school:    "https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?auto=format&fit=crop&w=800&q=70",
-    event:     "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=70",
-    logistics: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=70",
-    driver:    "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=70",
-    printHero: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&w=1200&q=70",
-    machine:   "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=900&q=70",
-    cards:     "https://images.unsplash.com/photo-1572375992501-4b0892d50c69?auto=format&fit=crop&w=800&q=70",
-    banner:    "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=800&q=70",
-    stickers:  "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=70",
-    embroidery:"https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=70",
-    souvenirs: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=70",
-    gifts:     "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=70",
-    paper:     "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=70",
-    phone:     ""  // optional app-screen screenshot for the phone mockup
+    // Transport
+    heroBus:    "assets/img/bus-banner.jpg",
+    intracity:  "assets/img/intracity.jpg",
+    interstate: "assets/img/interstate.jpg",
+    school:     "assets/img/school.jpg",
+    corporate:  "assets/img/corporate.jpg",
+    event:      "assets/img/event.jpg",
+    excursion:  "assets/img/excursion.jpg",
+    logistics:  "assets/img/delivery.jpg",
+    package:    "assets/img/package.jpg",
+    fleet:      "assets/img/fleet.jpg",
+    hire:       "assets/img/hire.jpg",
+    // Printing
+    printBanner:"assets/img/print-banner.jpg",
+    printHero:  "assets/img/print-about.jpg",
+    embroidery: "assets/img/embroidery.jpg",
+    banner:     "assets/img/banner.jpg",
+    machine:    "assets/img/machine.jpg",
+    paper:      "assets/img/paper.jpg",
+    souvenirs:  "assets/img/souvenirs.jpg",
+    gifts:      "assets/img/gifts.jpg",
+    cards:      "assets/img/cards.jpg",
+    rollup:     "assets/img/rollup.jpg",
+    flyers:     "assets/img/flyers.jpg",
+    banners:    "assets/img/banners.jpg",
+    corpGifts:  "assets/img/corp-gifts.jpg",
+    diaries:    "assets/img/diaries.jpg",
+    phone:      ""  // optional app-screen screenshot for the phone mockup
   },
+
   // Add real customer quotes when available: {name:"", place:"", text:""}
   testimonials: []
 };
