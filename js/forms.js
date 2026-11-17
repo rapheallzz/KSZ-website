@@ -1,4 +1,7 @@
-document.querySelectorAll("[data-service]").forEach(a=>a.addEventListener("click",()=>{const s=document.querySelector("#tform [name=service]");if(s)s.value=a.dataset.service}));
+document.querySelectorAll("[data-service]").forEach(a=>a.addEventListener("click",()=>{const s=document.querySelector("form[data-ajax] [name=service]");if(s)s.value=a.dataset.service}));
+document.querySelectorAll(".drop").forEach(d=>{const i=d.querySelector("input"),t=d.querySelector("b"),o=t.textContent;
+ i.addEventListener("change",()=>{t.textContent=i.files[0]?i.files[0].name:o});
+ i.form.addEventListener("reset",()=>setTimeout(()=>{t.textContent=o}))});
 document.querySelectorAll("form[data-ajax]").forEach(f=>{
  const msg=f.querySelector(".msg"),ts=f.querySelector("[name=_t]");ts.value=Date.now();
  f.addEventListener("submit",async e=>{e.preventDefault();msg.className="msg";msg.textContent="";

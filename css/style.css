@@ -91,10 +91,12 @@ h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800}h2{font-size:clamp(1.7rem,
 .pane::before{content:"";position:absolute;inset:0;background:var(--bg) center/cover;z-index:-2;transition:transform .8s}.pane:hover::before{transform:scale(1.05)}
 .pane::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,var(--tint) 10%,rgba(0,0,0,.15))}
 .pane.t{--tint:rgba(3,100,150,.92)}.pane.p{--tint:rgba(4,90,97,.92)}.pane p{max-width:40ch;margin:.8rem 0 1.4rem;opacity:.95}.pane .btn{align-self:flex-start}
-body[data-page="home"] h1,body[data-page="home"] h2,body[data-page="transport"] h1,body[data-page="transport"] h2{font-family:var(--pop);font-weight:900;letter-spacing:-.025em;line-height:1.08}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.i{width:1.2em;height:1.2em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body[data-page="home"] h1,body[data-page="home"] h2,body[data-page="transport"] h1,body[data-page="transport"] h2,body[data-page="printing"] h1,body[data-page="printing"] h2{font-family:var(--pop);font-weight:900;letter-spacing:-.025em;line-height:1.08}
 body[data-page="home"] h1{font-size:clamp(2rem,4.6vw,3.4rem)}
 body[data-page="transport"] h1{font-size:clamp(2rem,4.4vw,3.3rem)}
-body[data-page="home"] h3,body[data-page="transport"] h3{font-family:var(--pop);font-weight:700;letter-spacing:-.01em}
+body[data-page="home"] h3,body[data-page="transport"] h3,body[data-page="printing"] h3{font-family:var(--pop);font-weight:700;letter-spacing:-.01em}
 /* about: intro + service cards */
 .about{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--soft) 100%)}
 .about::before,.about::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
