@@ -1,3 +1,4 @@
+document.querySelectorAll("[data-service]").forEach(a=>a.addEventListener("click",()=>{const s=document.querySelector("#tform [name=service]");if(s)s.value=a.dataset.service}));
 document.querySelectorAll("form[data-ajax]").forEach(f=>{
  const msg=f.querySelector(".msg"),ts=f.querySelector("[name=_t]");ts.value=Date.now();
  f.addEventListener("submit",async e=>{e.preventDefault();msg.className="msg";msg.textContent="";

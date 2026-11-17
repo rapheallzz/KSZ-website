@@ -87,6 +87,8 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!chat.hidden){open(
 document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa(a.dataset.wa);a.target="_blank";a.rel="noopener"});
 document.querySelectorAll("[data-phones]").forEach(a=>{a.textContent=K.phones.join(" / ")});
 document.querySelectorAll("[data-address]").forEach(a=>{a.textContent=K.address});
+document.querySelectorAll("[data-email]").forEach(a=>{a.href="mailto:"+K.email;a.textContent=K.email});
+if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelectorAll("svg").forEach(s=>s.pauseAnimations&&s.pauseAnimations());
 paintImages();
 if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px 0px"});
  document.querySelectorAll("[data-reveal]").forEach(el=>{el.classList.add("rv");io.observe(el)})}
